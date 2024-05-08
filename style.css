@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to left top, #ce0fdb, #8a6cff);
+}
+.container{
+    max-width: 600px;
+    width: 100%;
+    background-color: #000000ac;
+    padding: 50px 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#hour,#minute,#second,#miniSecond{
+    width: 22%;
+    padding: 30px 20px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #000;
+    background-color: #ffffffa7;
+    margin-bottom: 60px;
+    position: relative;
+}
+#hour::after{
+    content: 'Hour';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #fff;
+}
+#minute::after{
+    content: 'Minutes';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #fff;
+}
+#second::after{
+    content: 'Seconds';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #fff;
+}
+#miniSecond::after{
+    content: 'Mini Seconds';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #fff;
+}
+.system-buttons{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.system-buttons img{
+    width: 20%;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(to left top, #ce0fdb, #8a6cff);
+}
+
+
+@media (max-width: 550px) {
+    #hour,#minute,#second,#miniSecond{
+        width: 49%;
+    }
+}
+@media (max-width: 400px) {
+    #hour,#minute,#second,#miniSecond{
+        width: 100%;
+        margin-bottom: 45px;
+    }
+    .system-buttons img{
+        height: 50px;
+    }
+}
