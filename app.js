@@ -58,6 +58,9 @@ function setTimeReset() {
     minuteCount < 10 ? minute.innerHTML = `0${minuteCount}` : minute.innerHTML = minuteCount;
     hourCount < 10 ? hour.innerHTML = `0${hourCount}` : hour.innerHTML = hourCount;
     clearInterval(interval)
+    start.disabled = false;
+    pause.disabled = false;
+    reset.disabled = false;
 };
 
 start.addEventListener('click', setTimeStart);
