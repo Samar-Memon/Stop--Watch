@@ -7,6 +7,10 @@ const pause = document.getElementById('pause');
 const reset = document.getElementById('reset');
 
 
+start.disabled = false;
+pause.disabled = true;
+reset.disabled = true;
+
 let hourCount = 0;
 let minuteCount = 0;
 let secondCount = 0;
@@ -34,9 +38,15 @@ const timeStart = () => {
 let interval;
 function setTimeStart() {
     interval = setInterval(timeStart, 15)
+start.disabled = true;
+pause.disabled = false;
+reset.disabled = false;
 };
 function setTimePause() {
     clearInterval(interval);
+    start.disabled = false;
+    pause.disabled = true;
+    reset.disabled = false;
 };
 function setTimeReset() {
     miniSecondCount = 0;
@@ -50,26 +60,6 @@ function setTimeReset() {
     clearInterval(interval)
 };
 
-function startGetClass() {
-    start.classList.toggle('startClass');
-    if(start.className == 'startClass'){
-        setTimeStart();
-        pause.classList.remove('pauseClass');
-    }
-}
-function pauseGetClass() {
-    pause.classList.toggle('pauseClass');
-    if(pause.className == 'pauseClass'){
-        setTimePause();
-        start.classList.remove('startClass');
-    }
-}
-function resetGetClass() {
-        start.classList.remove('startClass');
-        pause.classList.remove('pauseClass');
-        setTimeReset();
-};
-
-start.addEventListener('click', startGetClass);
-pause.addEventListener('click', pauseGetClass);
-reset.addEventListener('click', resetGetClass);
+start.addEventListener('click', setTimeStart);
+pause.addEventListener('click', setTimePause);
+reset.addEventListener('click', setTimeReset);

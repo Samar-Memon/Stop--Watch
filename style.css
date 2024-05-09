@@ -78,11 +78,16 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.system-buttons img{
+.system-buttons button{
     width: 20%;
     height: 100px;
     border-radius: 50%;
+    border: none;
     background: linear-gradient(to left top, #ce0fdb, #8a6cff);
+}
+.system-buttons img{
+    width: 100%;
+    height: 100%;
 }
 
 
