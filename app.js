@@ -50,6 +50,26 @@ function setTimeReset() {
     clearInterval(interval)
 };
 
-start.addEventListener('click', setTimeStart);
-pause.addEventListener('click', setTimePause);
-reset.addEventListener('click', setTimeReset);
+function startGetClass() {
+    start.classList.toggle('startClass');
+    if(start.className == 'startClass'){
+        setTimeStart();
+        pause.classList.remove('pauseClass');
+    }
+}
+function pauseGetClass() {
+    pause.classList.toggle('pauseClass');
+    if(pause.className == 'pauseClass'){
+        setTimePause();
+        start.classList.remove('startClass');
+    }
+}
+function resetGetClass() {
+        start.classList.remove('startClass');
+        pause.classList.remove('pauseClass');
+        setTimeReset();
+};
+
+start.addEventListener('click', startGetClass);
+pause.addEventListener('click', pauseGetClass);
+reset.addEventListener('click', resetGetClass);
